@@ -1,11 +1,18 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group 'io.polyhx.lhgames'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
+
+jar {
+    manifest {
+        attributes 'Main-Class': 'io.polyhx.lhgames.game.Main'
+    }
+}
 
 repositories {
     mavenCentral()
@@ -19,3 +26,5 @@ dependencies {
     compile group: 'com.google.guava', name: 'guava', version: '26.0-jre'
 
 }
+
+mainClassName = 'io.polyhx.lhgames.game.Main'
