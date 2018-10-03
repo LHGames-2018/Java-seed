@@ -1,7 +1,8 @@
-package io.polyhx.lhgames.game;
+////////////////////////////////////////////
+//         DO NOT TOUCH THIS FILE         //
+////////////////////////////////////////////
 
-import java.util.Arrays;
-import java.util.List;
+package io.polyhx.lhgames.game;
 
 public class Player {
     private final Point fPosition;

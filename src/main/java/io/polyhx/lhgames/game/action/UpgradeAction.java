@@ -1,3 +1,7 @@
+////////////////////////////////////////////
+//         DO NOT TOUCH THIS FILE         //
+////////////////////////////////////////////
+
 package io.polyhx.lhgames.game.action;
 
 import io.polyhx.lhgames.game.Upgrade;

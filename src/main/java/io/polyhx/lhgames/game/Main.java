@@ -1,3 +1,7 @@
+////////////////////////////////////////////
+//         DO NOT TOUCH THIS FILE         //
+////////////////////////////////////////////
+
 package io.polyhx.lhgames.game;
 
 import com.google.gson.Gson;
@@ -5,8 +9,6 @@ import com.google.gson.GsonBuilder;
 import io.polyhx.lhgames.deserializer.GameInfoDeserializer;
 import io.polyhx.lhgames.game.action.*;
 import io.polyhx.lhgames.serializer.ActionSerializer;
-
-import java.io.UnsupportedEncodingException;
 
 import static spark.Spark.*;
 

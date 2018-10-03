@@ -1,3 +1,7 @@
+////////////////////////////////////////////
+//         DO NOT TOUCH THIS FILE         //
+////////////////////////////////////////////
+
 package io.polyhx.lhgames.deserializer;
 
 import io.polyhx.lhgames.game.Point;
