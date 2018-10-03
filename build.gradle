@@ -1,6 +1,5 @@
 plugins {
     id 'java'
-    id 'application'
 }
 
 group 'io.polyhx.lhgames'
@@ -8,10 +7,16 @@ version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
 
-jar {
-    manifest {
-        attributes 'Main-Class': 'io.polyhx.lhgames.game.Main'
+task fatJar(type: Jar) {
+	manifest {
+        attributes \
+            'Implementation-Title': 'Gradle Jar File Example',  
+        	'Implementation-Version': version,
+            'Main-Class': 'io.polyhx.lhgames.game.Main'
     }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
 }
 
 repositories {
@@ -24,7 +29,4 @@ dependencies {
     compile group: 'com.google.code.gson', name: 'gson', version: '2.7'
     compile group: 'org.jparsec', name: 'jparsec', version: '3.0'
     compile group: 'com.google.guava', name: 'guava', version: '26.0-jre'
-
 }
-
-mainClassName = 'io.polyhx.lhgames.game.Main'
