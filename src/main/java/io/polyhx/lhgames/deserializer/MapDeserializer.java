@@ -26,27 +26,27 @@ public class MapDeserializer {
     /** This parser detects a comma. */
     private final static Parser<Void> PARSER_COMMA = Scanners.isChar(',');
 
-    /** This parser detects the pattern '(x(,+ε))*' where x is a number. */
+    /** This parser detects the pattern '(x,)*x+λ' where x is a number. */
     private final static Parser<List<Integer>> PARSER_TILE_CONTENT =
             Scanners.INTEGER.map(s -> Integer.parseInt(s)).sepBy(PARSER_COMMA);
 
-    /** This parser detects the pattern `{(x(,+ε))*}`. */
+    /** This parser detects the pattern `{(x,)*x+λ}`. */
     private final static Parser<List<Integer>> PARSER_TILE_ITEM =
             Parsers.sequence(PARSER_BRACE_OPEN, PARSER_TILE_CONTENT, PARSER_BRACE_CLOSE, (x1, x2, x3) -> x2);
 
-    /** This parser detects the pattern `({(x(,+ε))*}(,+ε))*`. */
+    /** This parser detects the pattern `({(x,)*x+λ},)*{(x,)*x+λ}+λ`. */
     private final static Parser<List<List<Integer>>> PARSER_ROW_CONTENT =
             PARSER_TILE_ITEM.sepBy(PARSER_COMMA);
 
-    /** This parser detects the pattern `[({(x(,+ε))*}(,+ε))*]`. */
+    /** This parser detects the pattern `[({(x,)*x+λ},)*{(x,)*x+λ}+λ]`. */
     private final static Parser<List<List<Integer>>> PARSER_ROW_ITEM =
             Parsers.sequence(PARSER_BRACKET_OPEN, PARSER_ROW_CONTENT, PARSER_BRACKET_CLOSE, (x1, x2, x3) -> x2);
 
-    /** This parser detects the pattern `([({(x(,+ε))*}(,+ε))*](,+ε))*`. */
+    /** This parser detects the pattern `([({(x,)*x+λ},)*{(x,)*x+λ}+λ])*[({(x,)*x+λ},)*{(x,)*x+λ}+λ]+λ`. */
     private final static Parser<List<List<List<Integer>>>> PARSER_MAP_CONTENT =
             PARSER_ROW_ITEM.sepBy(PARSER_COMMA);
 
-    /** This parser detects the pattern `[([({(x(,+ε))*}(,+ε))*](,+ε))*]`. */
+    /** This parser detects the pattern `[([({(x,)*x+λ},)*{(x,)*x+λ}+λ])*[({(x,)*x+λ},)*{(x,)*x+λ}+λ]+λ]`. */
     private final static Parser<List<List<List<Integer>>>> PARSER_MAP_ITEM
             = Parsers.sequence(PARSER_BRACKET_OPEN, PARSER_MAP_CONTENT, PARSER_BRACKET_CLOSE, (x1, x2, x3) -> x2);
 
