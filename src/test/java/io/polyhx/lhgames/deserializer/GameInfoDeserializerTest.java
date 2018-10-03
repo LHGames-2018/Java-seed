@@ -51,6 +51,11 @@ public class GameInfoDeserializerTest {
         assertEquals(game.getPlayer().getScore(), 0);
         assertEquals(game.getPlayer().getCollectingSpeed(), 2.0,0.01);
         assertEquals(game.getPlayer().getName(), "Player 1");
+        assertEquals(game.getPlayer().getCapacityLevel(), 0);
+        assertEquals(game.getPlayer().getAttackLevel(), 3);
+        assertEquals(game.getPlayer().getDefenceLevel(), 4);
+        assertEquals(game.getPlayer().getHealthLevel(), 2);
+        assertEquals(game.getPlayer().getCollectingSpeedLevel(), 1);
 
         assertEquals(game.getMap().getTile(20,40).getPosition().getX(), 20);
         assertEquals(game.getMap().getTile(20,40).getPosition().getY(), 40);

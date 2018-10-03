@@ -1,5 +1,8 @@
 package io.polyhx.lhgames.game;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class Player {
     private final Point fPosition;
     private final Point fHouse;
@@ -13,11 +16,13 @@ public class Player {
     private final int fScore;
     private final float fCollectingSpeed;
     private final String fName;
+    private final Upgrades fUpgrades;
 
-    /* TODO: add items and upgrades */
+    /* TODO: add items */
 
     public Player(Point pos, Point house, int healthCurrent, int healthMax, int resourceCurrent, int resourceCapacity,
-                  int resourceTotal, int attack, int defence, int score, float collectingSpeed, String name) {
+                  int resourceTotal, int attack, int defence, int score, float collectingSpeed, String name,
+                  int[] upgrades) {
         fPosition = pos;
         fHouse = house;
         fHealthCurrent = healthCurrent;
@@ -30,6 +35,34 @@ public class Player {
         fScore = score;
         fCollectingSpeed = collectingSpeed;
         fName = name;
+
+        /* make sure we have an upgrade array */
+        if(upgrades == null) {
+            upgrades = new int[]{0,0,0,0,0};
+        }
+
+        /* make the array of lenth 5 if it isn't for some reason */
+        if(upgrades.length < 5) {
+            System.out.println("Upgrade array has less than 5 elements: " + upgrades);
+            int[] newUpgrades = new int[]{0,0,0,0,0};
+            for(int i = 0; i < newUpgrades.length; i++) {
+                newUpgrades[i] = (i < upgrades.length) ? upgrades[i] : 0;
+            }
+        }
+
+        /* warning if the array is of a size higher than 5 */
+        if(upgrades.length > 5) {
+            System.out.println("Upgrade array has more than 5 elements: " + upgrades);
+        }
+
+        /* create the upgrades */
+        fUpgrades = new Upgrades(
+                upgrades[Upgrade.CARRYING_CAPACITY.getID()],
+                upgrades[Upgrade.MAXIMUM_HEALTH.getID()],
+                upgrades[Upgrade.COLLECTING_SPEED.getID()],
+                upgrades[Upgrade.ATTACK.getID()],
+                upgrades[Upgrade.DEFENCE.getID()]
+        );
     }
 
     public Point getPosition() {
@@ -78,5 +111,41 @@ public class Player {
 
     public String getName() {
         return fName;
+    }
+
+    class Upgrades {
+        final int fCarryingCapacity;
+        final int fMaximumHealth;
+        final int fCollectingSpeed;
+        final int fAttack;
+        final int fDefence;
+
+        Upgrades(int capacity, int health, int speed, int attack, int defence) {
+            fCarryingCapacity = capacity;
+            fMaximumHealth = health;
+            fCollectingSpeed = speed;
+            fAttack = attack;
+            fDefence = defence;
+        }
+    }
+
+    public int getCapacityLevel() {
+        return fUpgrades.fCarryingCapacity;
+    }
+
+    public int getHealthLevel() {
+        return fUpgrades.fMaximumHealth;
+    }
+
+    public int getCollectingSpeedLevel() {
+        return fUpgrades.fCollectingSpeed;
+    }
+
+    public int getAttackLevel() {
+        return fUpgrades.fAttack;
+    }
+
+    public int getDefenceLevel() {
+        return fUpgrades.fDefence;
     }
 }

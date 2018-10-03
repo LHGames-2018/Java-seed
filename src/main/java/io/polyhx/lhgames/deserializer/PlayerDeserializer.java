@@ -22,7 +22,8 @@ public class PlayerDeserializer implements JsonDeserializer<Player> {
                 obj.get("Defence").getAsInt(),
                 obj.get("Score").getAsInt(),
                 obj.get("CollectingSpeed").getAsFloat(),
-                obj.get("Name").getAsString()
+                obj.get("Name").getAsString(),
+                context.deserialize(obj.get("UpgradeLevels").getAsJsonArray(), int[].class)
         );
     }
 }

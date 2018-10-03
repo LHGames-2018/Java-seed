@@ -21,7 +21,7 @@ public class PlayerDeserializerTest {
             "\"HouseLocation\":{\"x\":40,\"y\":54}," +
             "\"Score\":0," +
             "\"Name\":\"Player 1\"," +
-            "\"UpgradeLevels\":[0,3,4,2,1]," +
+            "\"UpgradeLevels\":[0,1,2,3,4]," +
             "\"CarriedItems\":[0,2,2,3,1,4]" +
     "}";
 
@@ -44,5 +44,10 @@ public class PlayerDeserializerTest {
         assertEquals(player.getScore(), 0);
         assertEquals(player.getCollectingSpeed(), 2.0,0.01);
         assertEquals(player.getName(), "Player 1");
+        assertEquals(player.getCapacityLevel(), 0);
+        assertEquals(player.getAttackLevel(), 1);
+        assertEquals(player.getDefenceLevel(), 2);
+        assertEquals(player.getHealthLevel(), 3);
+        assertEquals(player.getCollectingSpeedLevel(), 4);
     }
 }
