@@ -1,13 +1,19 @@
 package io.polyhx.lhgames.game.tile;
 
-import io.polyhx.lhgames.game.Point;
+import io.polyhx.lhgames.game.point.IPoint;
+import io.polyhx.lhgames.game.point.Point;
 
-public class Tile extends Point {
+public class Tile implements IPoint {
+    private final Point fPosition;
     private final TileContent fContent;
 
     public Tile(Point position, TileContent content) {
-        super(position);
+        fPosition = position;
         fContent = content;
+    }
+
+    public Point getPosition() {
+        return fPosition;
     }
 
     public TileContent getContent() {
@@ -40,5 +46,15 @@ public class Tile extends Point {
 
     public boolean isPlayer() {
         return (fContent == TileContent.PLAYER);
+    }
+
+    @Override
+    public int getX() {
+        return fPosition.getX();
+    }
+
+    @Override
+    public int getY() {
+        return fPosition.getY();
     }
 }
