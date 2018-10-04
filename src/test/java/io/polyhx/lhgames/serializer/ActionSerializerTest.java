@@ -36,11 +36,19 @@ public class ActionSerializerTest {
 
         /* collect action*/
         json = gson.toJson(new CollectAction(new Point(-2, 4)));
-        assertEquals(json, "{\"ActionName\":\"CollectAction\",\"Content\":\"{X:-2,Y:4}\"}");
+        assertEquals(json, "{\"ActionName\":\"CollectAction\",\"Content\":\"{X:0,Y:0}\"}");
+
+        /* collect action*/
+        json = gson.toJson(new CollectAction(new Point(-2, 0)));
+        assertEquals(json, "{\"ActionName\":\"CollectAction\",\"Content\":\"{X:-1,Y:0}\"}");
 
         /* move action */
         json = gson.toJson(new MoveAction(new Point(2, 3)));
-        assertEquals(json, "{\"ActionName\":\"MoveAction\",\"Content\":\"{X:2,Y:3}\"}");
+        assertEquals(json, "{\"ActionName\":\"MoveAction\",\"Content\":\"{X:0,Y:0}\"}");
+
+        /* move action */
+        json = gson.toJson(new MoveAction(new Point(0, 3)));
+        assertEquals(json, "{\"ActionName\":\"MoveAction\",\"Content\":\"{X:0,Y:1}\"}");
 
         /* upgrade action */
         json = gson.toJson(new UpgradeAction(Upgrade.ATTACK));

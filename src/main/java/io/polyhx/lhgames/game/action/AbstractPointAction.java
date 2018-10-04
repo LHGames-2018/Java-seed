@@ -11,8 +11,8 @@ public abstract class AbstractPointAction implements IAction {
 
     public AbstractPointAction(Point point) {
         /* get the direction for each coordinate */
-        int x = point.getX()/Math.abs(point.getX());
-        int y = point.getY()/Math.abs(point.getY());
+        int x = (point.getX() != 0) ? point.getX()/Math.abs(point.getX()) : 0;
+        int y = (point.getY() != 0) ? point.getY()/Math.abs(point.getY()) : 0;
 
         /* the point can only be in one direction */
         fPoint = (Math.abs(x) + Math.abs(y) == 2) ? new Point() : new Point(x, y);
