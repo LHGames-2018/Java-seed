@@ -4,7 +4,10 @@
 
 package io.polyhx.lhgames.game;
 
-public class Player {
+import io.polyhx.lhgames.game.point.IPoint;
+import io.polyhx.lhgames.game.point.Point;
+
+public class Player implements IPoint {
     private final Point fPosition;
     private final Point fHouse;
     private final int fHealthCurrent;
@@ -112,6 +115,16 @@ public class Player {
 
     public String getName() {
         return fName;
+    }
+
+    @Override
+    public int getX() {
+        return fPosition.getX();
+    }
+
+    @Override
+    public int getY() {
+        return fPosition.getY();
     }
 
     class Upgrades {
