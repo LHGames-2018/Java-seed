@@ -32,7 +32,7 @@ public class TileDeserializer {
         fResources = resources;
     }
 
-    public Tile deserialize(List<Integer> data, Point position) {
+    public Tile deserialize(List<Float> data, Point position) {
         /* empty tile */
         if (data.size() == 0) {
             return new Tile(position, TileContent.EMPTY);
@@ -47,7 +47,7 @@ public class TileDeserializer {
             }
 
             /* get the tile content */
-            TileContent content = TILE_ID_MAP.get(data.get(0));
+            TileContent content = TILE_ID_MAP.get(data.get(0).intValue());
             if (content == null) {
                 System.out.println("Fail to get tile content: " + data);
                 return new Tile(position, TileContent.EMPTY);
@@ -64,7 +64,7 @@ public class TileDeserializer {
         }
 
         /* create the resource tile and add it to the resource list */
-        ResourceTile tile = new ResourceTile(position, data.get(1), data.get(2));
+        ResourceTile tile = new ResourceTile(position, data.get(1).intValue(), data.get(2));
         fResources.add(tile);
         return tile;
     }

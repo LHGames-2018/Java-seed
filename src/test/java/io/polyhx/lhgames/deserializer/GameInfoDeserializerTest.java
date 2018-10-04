@@ -104,7 +104,7 @@ public class GameInfoDeserializerTest {
         assertEquals(game.getMap().getResources().size(), 1);
         assertEquals(game.getMap().getResources().get(0).getContent(), TileContent.RESOURCE);
         assertEquals(game.getMap().getResources().get(0).getResource(), 5000);
-        assertEquals(game.getMap().getResources().get(0).getDensity(), 1);
+        assertEquals(game.getMap().getResources().get(0).getDensity(), 1, 0.001);
 
         assertEquals(game.getMap().getRelativePoint().getX(), 20);
         assertEquals(game.getMap().getRelativePoint().getY(), 40);

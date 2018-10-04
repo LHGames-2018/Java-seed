@@ -11,12 +11,12 @@ public class MapDeserializerTest {
     /**
      * The test data for the equivalent map:
      *
-     *      [1] [ ] [ ]
+     *      [1] [ ] [4]
      *      [3] [ ] [ ]
      *      [2] [4] [ ]
      *
      */
-    private static final String TEST_DATA = "[[{1},{3},{2}],[{},{},{4,5000,1}],[{},{},{}]]";
+    private static final String TEST_DATA = "[[{1},{3},{2}],[{},{},{4,5000,1}],[{4,1500,1.5},{},{}]]";
 
     @Test
     public void deserialize() {
@@ -33,7 +33,7 @@ public class MapDeserializerTest {
 
         assertEquals(map.getTile(2,0).getPosition().getX(), 2);
         assertEquals(map.getTile(2,0).getPosition().getY(), 0);
-        assertEquals(map.getTile(2,0).getContent(), TileContent.EMPTY);
+        assertEquals(map.getTile(2,0).getContent(), TileContent.RESOURCE);
 
         assertEquals(map.getTile(0,1).getPosition().getX(), 0);
         assertEquals(map.getTile(0,1).getPosition().getY(), 1);
@@ -59,10 +59,13 @@ public class MapDeserializerTest {
         assertEquals(map.getTile(2,2).getPosition().getY(), 2);
         assertEquals(map.getTile(2,2).getContent(), TileContent.EMPTY);
 
-        assertEquals(map.getResources().size(), 1);
+        assertEquals(map.getResources().size(), 2);
         assertEquals(map.getResources().get(0).getContent(), TileContent.RESOURCE);
         assertEquals(map.getResources().get(0).getResource(), 5000);
-        assertEquals(map.getResources().get(0).getDensity(), 1);
+        assertEquals(map.getResources().get(0).getDensity(), 1.0, 0.001);
+        assertEquals(map.getResources().get(1).getContent(), TileContent.RESOURCE);
+        assertEquals(map.getResources().get(1).getResource(), 1500);
+        assertEquals(map.getResources().get(1).getDensity(), 1.5, 0.001);
 
         assertEquals(map.getRelativePoint().getX(), 0);
         assertEquals(map.getRelativePoint().getY(), 0);

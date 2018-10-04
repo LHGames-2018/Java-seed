@@ -4,9 +4,9 @@ import io.polyhx.lhgames.game.Point;
 
 public class ResourceTile extends Tile {
     private final int fResource;
-    private final int fDensity;
+    private final float fDensity;
 
-    public ResourceTile(Point position, int resource, int density) {
+    public ResourceTile(Point position, int resource, float density) {
         super(position, TileContent.RESOURCE);
         fResource = resource;
         fDensity = density;
@@ -16,7 +16,7 @@ public class ResourceTile extends Tile {
         return fResource;
     }
 
-    public int getDensity() {
+    public float getDensity() {
         return fDensity;
     }
 }
