@@ -25,10 +25,17 @@ public class Map {
         x -= fRelativeTo.getX();
         y -= fRelativeTo.getY();
 
-        /* get the tile */
-        List<Tile> tiles = fTiles.get(x);
-        if(tiles == null) return null;
-        return tiles.get(y);
+        /* make sure the x coordinate is inside the map */
+        if(x < 0 || x >= fTiles.size()) return null;
+
+        /* get the column */
+        List<Tile> column = fTiles.get(x);
+
+        /* make sure the y coordinate is inside the map */
+        if(y < 0 || y >= column.size()) return null;
+
+        /* get the actual tile */
+        return column.get(y);
     }
 
     public List<List<Tile>> getTiles() {
