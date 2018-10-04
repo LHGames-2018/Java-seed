@@ -7,6 +7,9 @@ package io.polyhx.lhgames.game;
 import io.polyhx.lhgames.game.point.IPoint;
 import io.polyhx.lhgames.game.point.Point;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player implements IPoint {
     private final Point fPosition;
     private final Point fHouse;
@@ -21,12 +24,13 @@ public class Player implements IPoint {
     private final float fCollectingSpeed;
     private final String fName;
     private final Upgrades fUpgrades;
+    private final List<Item> fItems;
 
     /* TODO: add items */
 
     public Player(Point pos, Point house, int healthCurrent, int healthMax, int resourceCurrent, int resourceCapacity,
                   int resourceTotal, int attack, int defence, int score, float collectingSpeed, String name,
-                  int[] upgrades) {
+                  int[] upgrades, int[] items) {
         fPosition = pos;
         fHouse = house;
         fHealthCurrent = healthCurrent;
@@ -67,6 +71,12 @@ public class Player implements IPoint {
                 upgrades[Upgrade.ATTACK.getID()],
                 upgrades[Upgrade.DEFENCE.getID()]
         );
+
+        /* create the items */
+        fItems = new ArrayList<>();
+        for(int item : items) {
+            fItems.add(Item.fromID(item));
+        }
     }
 
     public Point getPosition() {
@@ -161,5 +171,9 @@ public class Player implements IPoint {
 
     public int getDefenceLevel() {
         return fUpgrades.fDefence;
+    }
+
+    public List<Item> getItems() {
+        return fItems;
     }
 }
