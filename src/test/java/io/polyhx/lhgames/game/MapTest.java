@@ -53,48 +53,48 @@ public class MapTest {
         Tile tile;
 
         /* normal case */
-        assertEquals(fMap.getTile(20, 15).getPosition().getX(), 20);
-        assertEquals(fMap.getTile(20, 15).getPosition().getY(), 15);
+        assertEquals(fMap.getTile(20, 15).getX(), 20);
+        assertEquals(fMap.getTile(20, 15).getY(), 15);
         assertEquals(fMap.getTile(20, 15).getContent(), TileContent.EMPTY);
 
         /* normal case */
-        assertEquals(fMap.getTile(20, 16).getPosition().getX(), 20);
-        assertEquals(fMap.getTile(20, 16).getPosition().getY(), 16);
+        assertEquals(fMap.getTile(20, 16).getX(), 20);
+        assertEquals(fMap.getTile(20, 16).getY(), 16);
         assertEquals(fMap.getTile(20, 16).getContent(), TileContent.LAVA);
 
         /* normal case */
-        assertEquals(fMap.getTile(20, 17).getPosition().getX(), 20);
-        assertEquals(fMap.getTile(20, 17).getPosition().getY(), 17);
+        assertEquals(fMap.getTile(20, 17).getX(), 20);
+        assertEquals(fMap.getTile(20, 17).getY(), 17);
         assertEquals(fMap.getTile(20, 17).getContent(), TileContent.HOUSE);
 
         /* normal case */
-        assertEquals(fMap.getTile(21, 15).getPosition().getX(), 21);
-        assertEquals(fMap.getTile(21, 15).getPosition().getY(), 15);
+        assertEquals(fMap.getTile(21, 15).getX(), 21);
+        assertEquals(fMap.getTile(21, 15).getY(), 15);
         assertEquals(fMap.getTile(21, 15).getContent(), TileContent.PLAYER);
 
         /* normal case */
-        assertEquals(fMap.getTile(21, 16).getPosition().getX(), 21);
-        assertEquals(fMap.getTile(21, 16).getPosition().getY(), 16);
+        assertEquals(fMap.getTile(21, 16).getX(), 21);
+        assertEquals(fMap.getTile(21, 16).getY(), 16);
         assertEquals(fMap.getTile(21, 16).getContent(), TileContent.EMPTY);
 
         /* normal case */
-        assertEquals(fMap.getTile(21, 17).getPosition().getX(), 21);
-        assertEquals(fMap.getTile(21, 17).getPosition().getY(), 17);
+        assertEquals(fMap.getTile(21, 17).getX(), 21);
+        assertEquals(fMap.getTile(21, 17).getY(), 17);
         assertEquals(fMap.getTile(21, 17).getContent(), TileContent.LAVA);
 
         /* normal case */
-        assertEquals(fMap.getTile(22, 15).getPosition().getX(), 22);
-        assertEquals(fMap.getTile(22, 15).getPosition().getY(), 15);
+        assertEquals(fMap.getTile(22, 15).getX(), 22);
+        assertEquals(fMap.getTile(22, 15).getY(), 15);
         assertEquals(fMap.getTile(22, 15).getContent(), TileContent.HOUSE);
 
         /* normal case */
-        assertEquals(fMap.getTile(22, 16).getPosition().getX(), 22);
-        assertEquals(fMap.getTile(22, 16).getPosition().getY(), 16);
+        assertEquals(fMap.getTile(22, 16).getX(), 22);
+        assertEquals(fMap.getTile(22, 16).getY(), 16);
         assertEquals(fMap.getTile(22, 16).getContent(), TileContent.EMPTY);
 
         /* normal case */
-        assertEquals(fMap.getTile(22, 17).getPosition().getX(), 22);
-        assertEquals(fMap.getTile(22, 17).getPosition().getY(), 17);
+        assertEquals(fMap.getTile(22, 17).getX(), 22);
+        assertEquals(fMap.getTile(22, 17).getY(), 17);
         assertEquals(fMap.getTile(22, 17).getContent(), TileContent.SHOP);
 
         /* x out of bound */

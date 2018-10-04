@@ -65,40 +65,40 @@ public class GameInfoDeserializerTest {
         assertEquals(game.getPlayer().getHealthLevel(), 2);
         assertEquals(game.getPlayer().getCollectingSpeedLevel(), 1);
 
-        assertEquals(game.getMap().getTile(20,40).getPosition().getX(), 20);
-        assertEquals(game.getMap().getTile(20,40).getPosition().getY(), 40);
+        assertEquals(game.getMap().getTile(20,40).getX(), 20);
+        assertEquals(game.getMap().getTile(20,40).getY(), 40);
         assertEquals(game.getMap().getTile(20,40).getContent(), TileContent.WALL);
 
-        assertEquals(game.getMap().getTile(21,40).getPosition().getX(), 21);
-        assertEquals(game.getMap().getTile(21,40).getPosition().getY(), 40);
+        assertEquals(game.getMap().getTile(21,40).getX(), 21);
+        assertEquals(game.getMap().getTile(21,40).getY(), 40);
         assertEquals(game.getMap().getTile(21,40).getContent(), TileContent.EMPTY);
 
-        assertEquals(game.getMap().getTile(22,40).getPosition().getX(), 22);
-        assertEquals(game.getMap().getTile(22,40).getPosition().getY(), 40);
+        assertEquals(game.getMap().getTile(22,40).getX(), 22);
+        assertEquals(game.getMap().getTile(22,40).getY(), 40);
         assertEquals(game.getMap().getTile(22,40).getContent(), TileContent.EMPTY);
 
-        assertEquals(game.getMap().getTile(20,41).getPosition().getX(), 20);
-        assertEquals(game.getMap().getTile(20,41).getPosition().getY(), 41);
+        assertEquals(game.getMap().getTile(20,41).getX(), 20);
+        assertEquals(game.getMap().getTile(20,41).getY(), 41);
         assertEquals(game.getMap().getTile(20,41).getContent(), TileContent.LAVA);
 
-        assertEquals(game.getMap().getTile(21,41).getPosition().getX(), 21);
-        assertEquals(game.getMap().getTile(21,41).getPosition().getY(), 41);
+        assertEquals(game.getMap().getTile(21,41).getX(), 21);
+        assertEquals(game.getMap().getTile(21,41).getY(), 41);
         assertEquals(game.getMap().getTile(21,41).getContent(), TileContent.EMPTY);
 
-        assertEquals(game.getMap().getTile(22,41).getPosition().getX(), 22);
-        assertEquals(game.getMap().getTile(22,41).getPosition().getY(), 41);
+        assertEquals(game.getMap().getTile(22,41).getX(), 22);
+        assertEquals(game.getMap().getTile(22,41).getY(), 41);
         assertEquals(game.getMap().getTile(22,41).getContent(), TileContent.EMPTY);
 
-        assertEquals(game.getMap().getTile(20,42).getPosition().getX(), 20);
-        assertEquals(game.getMap().getTile(20,42).getPosition().getY(), 42);
+        assertEquals(game.getMap().getTile(20,42).getX(), 20);
+        assertEquals(game.getMap().getTile(20,42).getY(), 42);
         assertEquals(game.getMap().getTile(20,42).getContent(), TileContent.HOUSE);
 
-        assertEquals(game.getMap().getTile(21,42).getPosition().getX(), 21);
-        assertEquals(game.getMap().getTile(21,42).getPosition().getY(), 42);
+        assertEquals(game.getMap().getTile(21,42).getX(), 21);
+        assertEquals(game.getMap().getTile(21,42).getY(), 42);
         assertEquals(game.getMap().getTile(21,42).getContent(), TileContent.RESOURCE);
 
-        assertEquals(game.getMap().getTile(22,42).getPosition().getX(), 22);
-        assertEquals(game.getMap().getTile(22,42).getPosition().getY(), 42);
+        assertEquals(game.getMap().getTile(22,42).getX(), 22);
+        assertEquals(game.getMap().getTile(22,42).getY(), 42);
         assertEquals(game.getMap().getTile(22,42).getContent(), TileContent.EMPTY);
 
         assertEquals(game.getMap().getResources().size(), 1);

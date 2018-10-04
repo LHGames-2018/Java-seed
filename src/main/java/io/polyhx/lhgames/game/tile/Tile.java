@@ -2,17 +2,12 @@ package io.polyhx.lhgames.game.tile;
 
 import io.polyhx.lhgames.game.Point;
 
-public class Tile {
-    private final Point fPosition;
+public class Tile extends Point {
     private final TileContent fContent;
 
     public Tile(Point position, TileContent content) {
-        fPosition = position;
+        super(position);
         fContent = content;
-    }
-
-    public Point getPosition() {
-        return fPosition;
     }
 
     public TileContent getContent() {

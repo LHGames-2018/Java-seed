@@ -23,40 +23,40 @@ public class MapDeserializerTest {
         MapDeserializer deserializer = new MapDeserializer();
         Map map = deserializer.deserialize(TEST_DATA, new Point(0,0));
 
-        assertEquals(map.getTile(0,0).getPosition().getX(), 0);
-        assertEquals(map.getTile(0,0).getPosition().getY(), 0);
+        assertEquals(map.getTile(0,0).getX(), 0);
+        assertEquals(map.getTile(0,0).getY(), 0);
         assertEquals(map.getTile(0,0).getContent(), TileContent.WALL);
 
-        assertEquals(map.getTile(1,0).getPosition().getX(), 1);
-        assertEquals(map.getTile(1,0).getPosition().getY(), 0);
+        assertEquals(map.getTile(1,0).getX(), 1);
+        assertEquals(map.getTile(1,0).getY(), 0);
         assertEquals(map.getTile(1,0).getContent(), TileContent.EMPTY);
 
-        assertEquals(map.getTile(2,0).getPosition().getX(), 2);
-        assertEquals(map.getTile(2,0).getPosition().getY(), 0);
+        assertEquals(map.getTile(2,0).getX(), 2);
+        assertEquals(map.getTile(2,0).getY(), 0);
         assertEquals(map.getTile(2,0).getContent(), TileContent.RESOURCE);
 
-        assertEquals(map.getTile(0,1).getPosition().getX(), 0);
-        assertEquals(map.getTile(0,1).getPosition().getY(), 1);
+        assertEquals(map.getTile(0,1).getX(), 0);
+        assertEquals(map.getTile(0,1).getY(), 1);
         assertEquals(map.getTile(0,1).getContent(), TileContent.LAVA);
 
-        assertEquals(map.getTile(1,1).getPosition().getX(), 1);
-        assertEquals(map.getTile(1,1).getPosition().getY(), 1);
+        assertEquals(map.getTile(1,1).getX(), 1);
+        assertEquals(map.getTile(1,1).getY(), 1);
         assertEquals(map.getTile(1,1).getContent(), TileContent.EMPTY);
 
-        assertEquals(map.getTile(2,1).getPosition().getX(), 2);
-        assertEquals(map.getTile(2,1).getPosition().getY(), 1);
+        assertEquals(map.getTile(2,1).getX(), 2);
+        assertEquals(map.getTile(2,1).getY(), 1);
         assertEquals(map.getTile(2,1).getContent(), TileContent.EMPTY);
 
-        assertEquals(map.getTile(0,2).getPosition().getX(), 0);
-        assertEquals(map.getTile(0,2).getPosition().getY(), 2);
+        assertEquals(map.getTile(0,2).getX(), 0);
+        assertEquals(map.getTile(0,2).getY(), 2);
         assertEquals(map.getTile(0,2).getContent(), TileContent.HOUSE);
 
-        assertEquals(map.getTile(1,2).getPosition().getX(), 1);
-        assertEquals(map.getTile(1,2).getPosition().getY(), 2);
+        assertEquals(map.getTile(1,2).getX(), 1);
+        assertEquals(map.getTile(1,2).getY(), 2);
         assertEquals(map.getTile(1,2).getContent(), TileContent.RESOURCE);
 
-        assertEquals(map.getTile(2,2).getPosition().getX(), 2);
-        assertEquals(map.getTile(2,2).getPosition().getY(), 2);
+        assertEquals(map.getTile(2,2).getX(), 2);
+        assertEquals(map.getTile(2,2).getY(), 2);
         assertEquals(map.getTile(2,2).getContent(), TileContent.EMPTY);
 
         assertEquals(map.getResources().size(), 2);
