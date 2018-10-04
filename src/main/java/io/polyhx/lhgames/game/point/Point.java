@@ -39,6 +39,12 @@ public class Point {
         return fY;
     }
 
+    public double getDistanceTo(Point point) {
+        double dx = fX - point.getX();
+        double dy = fY - point.getY();
+        return Math.sqrt(dx * dx + dy * dy);
+    }
+
     public String toJSON() {
         return String.format("{X:%d,Y:%d}", fX, fY);
     }
