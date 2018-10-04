@@ -2,7 +2,7 @@ package io.polyhx.lhgames.deserializer;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import io.polyhx.lhgames.game.Point;
+import io.polyhx.lhgames.game.point.Point;
 import org.junit.Test;
 
 import static org.junit.Assert.*;

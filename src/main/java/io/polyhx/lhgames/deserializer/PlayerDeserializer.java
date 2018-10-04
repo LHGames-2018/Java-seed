@@ -6,7 +6,7 @@ package io.polyhx.lhgames.deserializer;
 
 import com.google.gson.*;
 import io.polyhx.lhgames.game.Player;
-import io.polyhx.lhgames.game.Point;
+import io.polyhx.lhgames.game.point.Point;
 
 import java.lang.reflect.Type;
 

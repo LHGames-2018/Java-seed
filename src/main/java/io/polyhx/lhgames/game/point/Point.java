@@ -2,9 +2,9 @@
 //         DO NOT TOUCH THIS FILE         //
 ////////////////////////////////////////////
 
-package io.polyhx.lhgames.game;
+package io.polyhx.lhgames.game.point;
 
-public class Point {
+public class Point implements IPoint {
     private final int fX;
     private final int fY;
 
@@ -37,12 +37,6 @@ public class Point {
 
     public int getY() {
         return fY;
-    }
-
-    public double getDistanceTo(Point point) {
-        double dx = fX - point.getX();
-        double dy = fY - point.getY();
-        return Math.sqrt(dx * dx + dy * dy);
     }
 
     public String toJSON() {

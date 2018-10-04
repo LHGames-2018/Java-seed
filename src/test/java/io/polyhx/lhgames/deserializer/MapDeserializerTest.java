@@ -1,7 +1,7 @@
 package io.polyhx.lhgames.deserializer;
 
 import io.polyhx.lhgames.game.Map;
-import io.polyhx.lhgames.game.Point;
+import io.polyhx.lhgames.game.point.Point;
 import io.polyhx.lhgames.game.tile.TileContent;
 import org.junit.Test;
 

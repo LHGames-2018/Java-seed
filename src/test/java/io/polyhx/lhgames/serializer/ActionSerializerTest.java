@@ -3,7 +3,7 @@ package io.polyhx.lhgames.serializer;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.polyhx.lhgames.game.Item;
-import io.polyhx.lhgames.game.Point;
+import io.polyhx.lhgames.game.point.Point;
 import io.polyhx.lhgames.game.Upgrade;
 import io.polyhx.lhgames.game.action.*;
 import org.junit.Test;

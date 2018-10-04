@@ -4,6 +4,8 @@
 
 package io.polyhx.lhgames.game;
 
+import io.polyhx.lhgames.game.point.IPoint;
+import io.polyhx.lhgames.game.point.Point;
 import io.polyhx.lhgames.game.tile.ResourceTile;
 import io.polyhx.lhgames.game.tile.Tile;
 
@@ -38,23 +40,23 @@ public class Map {
         return column.get(y);
     }
 
-    public Tile getTile(Point point) {
+    public Tile getTile(IPoint point) {
         return getTile(point.getX(), point.getY());
     }
 
-    public Tile getTileAboveOf(Point point) {
+    public Tile getTileAboveOf(IPoint point) {
         return getTile(point.getX(), point.getY()+1);
     }
 
-    public Tile getTileBelowOf(Point point) {
+    public Tile getTileBelowOf(IPoint point) {
         return getTile(point.getX(), point.getY()-1);
     }
 
-    public Tile getTileRightOf(Point point) {
+    public Tile getTileRightOf(IPoint point) {
         return getTile(point.getX()+1, point.getY());
     }
 
-    public Tile getTileLeftOf(Point point) {
+    public Tile getTileLeftOf(IPoint point) {
         return getTile(point.getX()-1, point.getY());
     }
 

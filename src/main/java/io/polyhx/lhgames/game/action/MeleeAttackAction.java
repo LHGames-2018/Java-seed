@@ -4,7 +4,7 @@
 
 package io.polyhx.lhgames.game.action;
 
-import io.polyhx.lhgames.game.Point;
+import io.polyhx.lhgames.game.point.Point;
 
 public class MeleeAttackAction extends AbstractPointAction {
     public MeleeAttackAction(Point point) {

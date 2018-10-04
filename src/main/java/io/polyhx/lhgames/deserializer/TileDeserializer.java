@@ -4,7 +4,7 @@
 
 package io.polyhx.lhgames.deserializer;
 
-import io.polyhx.lhgames.game.Point;
+import io.polyhx.lhgames.game.point.Point;
 import io.polyhx.lhgames.game.tile.ResourceTile;
 import io.polyhx.lhgames.game.tile.Tile;
 import io.polyhx.lhgames.game.tile.TileContent;

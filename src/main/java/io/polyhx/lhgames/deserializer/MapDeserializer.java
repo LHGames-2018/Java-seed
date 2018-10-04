@@ -6,7 +6,7 @@ package io.polyhx.lhgames.deserializer;
 
 import com.google.common.collect.ImmutableList;
 import io.polyhx.lhgames.game.Map;
-import io.polyhx.lhgames.game.Point;
+import io.polyhx.lhgames.game.point.Point;
 import io.polyhx.lhgames.game.tile.ResourceTile;
 import io.polyhx.lhgames.game.tile.Tile;
 import org.jparsec.*;

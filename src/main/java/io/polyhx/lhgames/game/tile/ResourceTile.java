@@ -1,6 +1,6 @@
 package io.polyhx.lhgames.game.tile;
 
-import io.polyhx.lhgames.game.Point;
+import io.polyhx.lhgames.game.point.Point;
 
 public class ResourceTile extends Tile {
     private final int fResource;
