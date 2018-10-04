@@ -49,7 +49,7 @@ public class Player implements IPoint {
             upgrades = new int[]{0,0,0,0,0};
         }
 
-        /* make the array of lenth 5 if it isn't for some reason */
+        /* make the array of length 5 if it isn't for some reason */
         if(upgrades.length < 5) {
             System.out.println("Upgrade array has less than 5 elements: " + upgrades);
             int[] newUpgrades = new int[]{0,0,0,0,0};
