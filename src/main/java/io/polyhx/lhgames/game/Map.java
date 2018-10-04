@@ -38,6 +38,26 @@ public class Map {
         return column.get(y);
     }
 
+    public Tile getTile(Point point) {
+        return getTile(point.getX(), point.getY());
+    }
+
+    public Tile getTileAboveOf(Point point) {
+        return getTile(point.getX(), point.getY()+1);
+    }
+
+    public Tile getTileBelowOf(Point point) {
+        return getTile(point.getX(), point.getY()-1);
+    }
+
+    public Tile getTileRightOf(Point point) {
+        return getTile(point.getX()+1, point.getY());
+    }
+
+    public Tile getTileLeftOf(Point point) {
+        return getTile(point.getX()-1, point.getY());
+    }
+
     public List<List<Tile>> getTiles() {
         return fTiles;
     }
