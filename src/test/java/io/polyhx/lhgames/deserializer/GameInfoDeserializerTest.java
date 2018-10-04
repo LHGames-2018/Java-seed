@@ -10,6 +10,14 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class GameInfoDeserializerTest {
+    /**
+     * The test data for with the equivalent map:
+     *
+     *      [1] [ ] [ ]
+     *      [3] [ ] [ ]
+     *      [2] [4] [ ]
+     *
+     */
     private final static String TEST_JSON = "{" +
             "\"Player\":{" +
                     "\"Health\":2," +
@@ -63,15 +71,15 @@ public class GameInfoDeserializerTest {
 
         assertEquals(game.getMap().getTile(21,40).getPosition().getX(), 21);
         assertEquals(game.getMap().getTile(21,40).getPosition().getY(), 40);
-        assertEquals(game.getMap().getTile(21,40).getContent(), TileContent.LAVA);
+        assertEquals(game.getMap().getTile(21,40).getContent(), TileContent.EMPTY);
 
         assertEquals(game.getMap().getTile(22,40).getPosition().getX(), 22);
         assertEquals(game.getMap().getTile(22,40).getPosition().getY(), 40);
-        assertEquals(game.getMap().getTile(22,40).getContent(), TileContent.HOUSE);
+        assertEquals(game.getMap().getTile(22,40).getContent(), TileContent.EMPTY);
 
         assertEquals(game.getMap().getTile(20,41).getPosition().getX(), 20);
         assertEquals(game.getMap().getTile(20,41).getPosition().getY(), 41);
-        assertEquals(game.getMap().getTile(20,41).getContent(), TileContent.EMPTY);
+        assertEquals(game.getMap().getTile(20,41).getContent(), TileContent.LAVA);
 
         assertEquals(game.getMap().getTile(21,41).getPosition().getX(), 21);
         assertEquals(game.getMap().getTile(21,41).getPosition().getY(), 41);
@@ -79,15 +87,15 @@ public class GameInfoDeserializerTest {
 
         assertEquals(game.getMap().getTile(22,41).getPosition().getX(), 22);
         assertEquals(game.getMap().getTile(22,41).getPosition().getY(), 41);
-        assertEquals(game.getMap().getTile(22,41).getContent(), TileContent.RESOURCE);
+        assertEquals(game.getMap().getTile(22,41).getContent(), TileContent.EMPTY);
 
         assertEquals(game.getMap().getTile(20,42).getPosition().getX(), 20);
         assertEquals(game.getMap().getTile(20,42).getPosition().getY(), 42);
-        assertEquals(game.getMap().getTile(20,42).getContent(), TileContent.EMPTY);
+        assertEquals(game.getMap().getTile(20,42).getContent(), TileContent.HOUSE);
 
         assertEquals(game.getMap().getTile(21,42).getPosition().getX(), 21);
         assertEquals(game.getMap().getTile(21,42).getPosition().getY(), 42);
-        assertEquals(game.getMap().getTile(21,42).getContent(), TileContent.EMPTY);
+        assertEquals(game.getMap().getTile(21,42).getContent(), TileContent.RESOURCE);
 
         assertEquals(game.getMap().getTile(22,42).getPosition().getX(), 22);
         assertEquals(game.getMap().getTile(22,42).getPosition().getY(), 42);

@@ -21,8 +21,14 @@ public class Map {
     }
 
     public Tile getTile(int x, int y) {
-        /* TODO: need to be safer */
-        return fTiles.get(y - fRelativeTo.getY()).get(x - fRelativeTo.getX());
+        /* get coordinate relative to the 2D array */
+        x -= fRelativeTo.getX();
+        y -= fRelativeTo.getY();
+
+        /* get the tile */
+        List<Tile> tiles = fTiles.get(x);
+        if(tiles == null) return null;
+        return tiles.get(y);
     }
 
     public List<List<Tile>> getTiles() {

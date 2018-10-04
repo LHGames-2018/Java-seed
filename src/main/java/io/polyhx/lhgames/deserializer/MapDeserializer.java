@@ -64,11 +64,11 @@ public class MapDeserializer {
 
         /* create the corresponding tiles */
         List<List<Tile>> map = new ArrayList<>();
-        for (int j = 0; j < tree.size(); j++) {
-            List<List<Integer>> row = tree.get(j);
+        for (int i = 0; i < tree.size(); i++) {
+            List<List<Integer>> row = tree.get(i);
             List<Tile> tiles = new ArrayList<>();
-            for (int i = 0; i < row.size(); i++) {
-                List<Integer> parameters = row.get(i);
+            for (int j = 0; j < row.size(); j++) {
+                List<Integer> parameters = row.get(j);
                 Point position = new Point(relative.getX()+i, relative.getY()+j);
                 Tile tile = deserializer.deserialize(parameters, position);
                 tiles.add(tile);
