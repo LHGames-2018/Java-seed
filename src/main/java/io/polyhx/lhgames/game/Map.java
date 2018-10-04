@@ -42,4 +42,13 @@ public class Map {
     public Point getRelativePoint() {
         return fRelativeTo;
     }
+
+    public void print() {
+        for(List<Tile> tiles : fTiles) {
+            for(Tile tile : tiles) {
+                System.out.print(tile.getContent().getSymbol() + " ");
+            }
+            System.out.println(" ");
+        }
+    }
 }
