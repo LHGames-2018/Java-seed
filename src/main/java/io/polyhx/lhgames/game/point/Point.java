@@ -38,8 +38,4 @@ public class Point implements IPoint {
     public int getY() {
         return fY;
     }
-
-    public String toJSON() {
-        return String.format("{X:%d,Y:%d}", fX, fY);
-    }
 }

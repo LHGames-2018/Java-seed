@@ -4,10 +4,10 @@
 
 package io.polyhx.lhgames.game.action;
 
-import io.polyhx.lhgames.game.point.Point;
+import io.polyhx.lhgames.game.point.IPoint;
 
 public class MeleeAttackAction extends AbstractPointAction {
-    public MeleeAttackAction(Point point) {
+    public MeleeAttackAction(IPoint point) {
         super(point);
     }
 

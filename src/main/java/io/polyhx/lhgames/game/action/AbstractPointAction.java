@@ -4,12 +4,13 @@
 
 package io.polyhx.lhgames.game.action;
 
+import io.polyhx.lhgames.game.point.IPoint;
 import io.polyhx.lhgames.game.point.Point;
 
 public abstract class AbstractPointAction implements IAction {
-    private final Point fPoint;
+    private final IPoint fPoint;
 
-    public AbstractPointAction(Point point) {
+    public AbstractPointAction(IPoint point) {
         /* get the direction for each coordinate */
         int x = (point.getX() != 0) ? point.getX()/Math.abs(point.getX()) : 0;
         int y = (point.getY() != 0) ? point.getY()/Math.abs(point.getY()) : 0;

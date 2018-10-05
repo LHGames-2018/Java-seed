@@ -4,10 +4,10 @@
 
 package io.polyhx.lhgames.game.action;
 
-import io.polyhx.lhgames.game.point.Point;
+import io.polyhx.lhgames.game.point.IPoint;
 
 public class MoveAction extends AbstractPointAction {
-    public MoveAction(Point point) {
+    public MoveAction(IPoint point) {
         super(point);
     }
 

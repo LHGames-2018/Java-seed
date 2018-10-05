@@ -10,4 +10,8 @@ public interface IPoint {
         double dy = getY() - point.getY();
         return Math.sqrt(dx * dx + dy * dy);
     }
+
+    default String toJSON() {
+        return String.format("{X:%d,Y:%d}", getX(), getY());
+    }
 }

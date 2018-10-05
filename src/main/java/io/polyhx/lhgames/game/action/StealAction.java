@@ -4,10 +4,10 @@
 
 package io.polyhx.lhgames.game.action;
 
-import io.polyhx.lhgames.game.point.Point;
+import io.polyhx.lhgames.game.point.IPoint;
 
 public class StealAction extends AbstractPointAction {
-    public StealAction(Point point) {
+    public StealAction(IPoint point) {
         super(point);
     }
 
