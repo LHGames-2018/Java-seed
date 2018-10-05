@@ -37,7 +37,8 @@ public class GameInfoDeserializerTest {
             "}," +
             "\"CustomSerializedMap\":\"[[{1},{3},{2}],[{},{},{4,5000,1}],[{},{},{}]]\"," +
             "\"xMin\":20," +
-            "\"yMin\":40" +
+            "\"yMin\":40," +
+            "\"WallsAreBreakable\":false" +
     "}";
 
     @Test
@@ -108,5 +109,7 @@ public class GameInfoDeserializerTest {
 
         assertEquals(game.getMap().getRelativePoint().getX(), 20);
         assertEquals(game.getMap().getRelativePoint().getY(), 40);
+
+        assertEquals(game.areWallsBreakable(), false);
     }
 }

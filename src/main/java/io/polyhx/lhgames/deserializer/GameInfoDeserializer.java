@@ -23,7 +23,8 @@ public class GameInfoDeserializer implements JsonDeserializer<GameInfo> {
 
         return new GameInfo(
                 new PlayerDeserializer().deserialize(obj.get("Player"), Player.class, context),
-                new MapDeserializer().deserialize(obj.get("CustomSerializedMap").getAsString(), relative)
+                new MapDeserializer().deserialize(obj.get("CustomSerializedMap").getAsString(), relative),
+                obj.get("WallsAreBreakable").getAsBoolean()
         );
     }
 }
