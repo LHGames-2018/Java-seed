@@ -8,6 +8,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import io.polyhx.lhgames.deserializer.GameInfoDeserializer;
 import io.polyhx.lhgames.game.action.*;
+import io.polyhx.lhgames.game.bot.Bot;
 import io.polyhx.lhgames.serializer.ActionSerializer;
 
 import static spark.Spark.*;
