@@ -1,12 +1,11 @@
 package io.polyhx.lhgames.game.bot;
 
-import java.util.Arrays;
-import java.util.List;
-
+/**
+ * This class can be used for saving data that can be reused across multiples deployments.
+ * <p>
+ * In order to use it, simple add fields to this class. You can add the `transient` keyword to the fields you do not
+ * want to save/load.
+ */
 public class BotData {
-    public int testNumber = 2;
 
-    public String testString = "wow";
-
-    public List<Integer> testArray = Arrays.asList(1,2,3,4,5);
 }

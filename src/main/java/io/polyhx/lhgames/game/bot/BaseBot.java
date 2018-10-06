@@ -19,6 +19,7 @@ public class BaseBot {
     public BaseBot() {
         fBotDataPath = "/data/bot.json";
         fBotData = new BotData();
+        load();
     }
 
     public void save() {
