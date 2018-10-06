@@ -44,7 +44,13 @@ public class Main {
             GameInfo game = gameDeserializer.fromJson(json, GameInfo.class);
 
             /* get an action from the bot */
-            IAction action = bot.getAction(game.getPlayer(), game.getMap());
+            IAction action;
+            try {
+                action = bot.getAction(game.getPlayer(), game.getMap());
+            } catch (Exception e){
+                e.printStackTrace();
+                return null;
+            }
 
             /* return the serialized JSON */
             return actionSerializer.toJson(action);
