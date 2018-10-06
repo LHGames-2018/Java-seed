@@ -10,6 +10,9 @@ import io.polyhx.lhgames.game.point.Point;
 
 import java.lang.reflect.Type;
 
+/**
+ * This class is used for decoding the player data coming from the game server.
+ */
 public class PlayerDeserializer implements JsonDeserializer<Player> {
     @Override
     public Player deserialize(JsonElement json, Type type, JsonDeserializationContext context) throws JsonParseException {

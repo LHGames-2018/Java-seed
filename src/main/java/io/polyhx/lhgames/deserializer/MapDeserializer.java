@@ -14,6 +14,9 @@ import org.jparsec.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is used for decoding the map data coming from the game server.
+ */
 public class MapDeserializer {
     /**
      * This parser detects a opening bracket.
@@ -76,6 +79,13 @@ public class MapDeserializer {
     private final static Parser<List<List<List<Float>>>> PARSER_MAP_ITEM
             = Parsers.sequence(PARSER_BRACKET_OPEN, PARSER_MAP_CONTENT, PARSER_BRACKET_CLOSE, (x1, x2, x3) -> x2);
 
+    /**
+     * This function deserialize the map using the custom format defined with the grammar in PARSER_MAP_ITEM.
+     *
+     * @param data     The serialized data of the map.
+     * @param relative The map's relative point.
+     * @return The decoded Map object.
+     */
     public Map deserialize(String data, Point relative) {
         /* parse the data into a tree */
         List<List<List<Float>>> tree = PARSER_MAP_ITEM.parse(data);

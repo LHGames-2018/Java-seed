@@ -4,6 +4,9 @@
 
 package io.polyhx.lhgames.game.action;
 
+/**
+ * This class represents an heal action.
+ */
 public class HealAction implements IAction {
     @Override
     public ActionType getActionType() {

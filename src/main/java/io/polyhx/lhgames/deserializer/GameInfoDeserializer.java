@@ -14,6 +14,9 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * This class is used for decoding the game info data coming from the game server.
+ */
 public class GameInfoDeserializer implements JsonDeserializer<GameInfo> {
     @Override
     public GameInfo deserialize(JsonElement json, Type type, JsonDeserializationContext context) throws JsonParseException {
@@ -33,6 +36,6 @@ public class GameInfoDeserializer implements JsonDeserializer<GameInfo> {
         Point relative = new Point(obj.get("xMin").getAsInt(), obj.get("yMin").getAsInt());
         Map map = new MapDeserializer().deserialize(obj.get("CustomSerializedMap").getAsString(), relative);
 
-        return new GameInfo(player, map, others, obj.get("WallsAreBreakable").getAsBoolean());
+        return new GameInfo(player, others, map, obj.get("WallsAreBreakable").getAsBoolean());
     }
 }

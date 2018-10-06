@@ -13,7 +13,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * This class is used for decoding tiles coming from the game server.
+ */
 public class TileDeserializer {
+    /**
+     * This map is used for mapping Integer value to TileContent.
+     */
     private static final Map<Integer, TileContent> TILE_ID_MAP;
 
     static {
@@ -27,12 +33,27 @@ public class TileDeserializer {
         TILE_ID_MAP.put(TileContent.PLAYER.getID(), TileContent.PLAYER);
     }
 
+    /**
+     * The list of resource tiles that has been created by this deserializer.
+     */
     private final List<ResourceTile> fResources;
 
+    /**
+     * Constructor.
+     *
+     * @param resources The resources array used for putting the created resource tiles.
+     */
     public TileDeserializer(List<ResourceTile> resources) {
         fResources = resources;
     }
 
+    /**
+     * This method creates a tile from a list of value. A single value is tile ID and 3 values is a resource tile.
+     *
+     * @param data     The list of value we want to create a tile from.
+     * @param position The tile's relative position.
+     * @return The created tile.
+     */
     public Tile deserialize(List<Float> data, Point position) {
         /* empty tile */
         if (data.size() == 0) {

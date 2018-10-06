@@ -12,6 +12,9 @@ import io.polyhx.lhgames.game.action.IAction;
 
 import java.lang.reflect.Type;
 
+/**
+ * This class serialises an action to JSON.
+ */
 public class ActionSerializer implements JsonSerializer<IAction> {
     @Override
     public JsonElement serialize(IAction action, Type type, JsonSerializationContext context) {

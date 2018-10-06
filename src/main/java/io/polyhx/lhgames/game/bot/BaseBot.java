@@ -11,17 +11,34 @@ import io.polyhx.lhgames.game.point.IPoint;
 
 import java.io.*;
 
+/**
+ * This class hides the basic code the bot.
+ */
 public class BaseBot {
+    /**
+     * The path to the data file.
+     */
     private final String fBotDataPath;
 
+    /**
+     * The bot data used for saving data across multiple deployments.
+     */
     protected BotData fBotData;
 
+    /**
+     * Constructor.
+     */
     public BaseBot() {
         fBotDataPath = "/data/bot.json";
         fBotData = new BotData();
+
+        /* try to load the bot's data */
         load();
     }
 
+    /**
+     * This method saves the bot's data into the persistent storage.
+     */
     public void save() {
         /* create the writer */
         FileWriter writer = null;
@@ -53,6 +70,9 @@ public class BaseBot {
         System.out.println("should be saved");
     }
 
+    /**
+     * This method loads the bot's data from the persistent storage.
+     */
     public void load() {
         /* make sure the data file exists */
         File datafile = new File(fBotDataPath);
@@ -81,35 +101,76 @@ public class BaseBot {
         }
 
         /* use the new data */
-        if(loaded != null) {
+        if (loaded != null) {
             fBotData = loaded;
         }
     }
 
+    /**
+     * This method creates a steal action.
+     *
+     * @param point The point we want to steal from.
+     * @return The steal action.
+     */
     static StealAction createStealAction(IPoint point) {
         return new StealAction(point);
     }
 
+    /**
+     * This method creates a melee attack action.
+     *
+     * @param point The point we want to attack.
+     * @return The attack action.
+     */
     static MeleeAttackAction createMeleeAttackAction(IPoint point) {
         return new MeleeAttackAction(point);
     }
 
+    /**
+     * This method creates a collect action.
+     *
+     * @param point The point we want to collect from.
+     * @return The collect action.
+     */
     static CollectAction createCollectAction(IPoint point) {
         return new CollectAction(point);
     }
 
+    /**
+     * This method creates a move action.
+     *
+     * @param point The point we want to move to.
+     * @return The move action.
+     */
     static MoveAction createMoveAction(IPoint point) {
         return new MoveAction(point);
     }
 
+    /**
+     * This method creates an upgrade action.
+     *
+     * @param upgrade The upgrade we want to perform.
+     * @return The upgrade action.
+     */
     static UpgradeAction createUpgradeAction(Upgrade upgrade) {
         return new UpgradeAction(upgrade);
     }
 
+    /**
+     * This method creates a purchase action.
+     *
+     * @param item The item we want to purchase.
+     * @return The upgrade action.
+     */
     static PurchaseAction createPurchaseAction(Item item) {
         return new PurchaseAction(item);
     }
 
+    /**
+     * This action creates an heal action.
+     *
+     * @return The heal action.
+     */
     static HealAction createHealAction() {
         return new HealAction();
     }
