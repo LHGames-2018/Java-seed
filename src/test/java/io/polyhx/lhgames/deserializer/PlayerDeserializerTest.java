@@ -23,7 +23,7 @@ public class PlayerDeserializerTest {
             "\"Name\":\"Player 1\"," +
             "\"UpgradeLevels\":[0,1,2,3,4]," +
             "\"CarriedItems\":[0,2,2,3,1,4]" +
-    "}";
+            "}";
 
     @Test
     public void deserialize() {
@@ -42,7 +42,7 @@ public class PlayerDeserializerTest {
         assertEquals(player.getAttack(), 4);
         assertEquals(player.getDefence(), 5);
         assertEquals(player.getScore(), 0);
-        assertEquals(player.getCollectingSpeed(), 2.0,0.01);
+        assertEquals(player.getCollectingSpeed(), 2.0, 0.01);
         assertEquals(player.getName(), "Player 1");
         assertEquals(player.getCapacityLevel(), 0);
         assertEquals(player.getAttackLevel(), 1);

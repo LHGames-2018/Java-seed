@@ -14,7 +14,8 @@ import java.util.List;
 import java.util.Map;
 
 public class TileDeserializer {
-    private static final Map<Integer,TileContent> TILE_ID_MAP;
+    private static final Map<Integer, TileContent> TILE_ID_MAP;
+
     static {
         TILE_ID_MAP = new HashMap<>();
         TILE_ID_MAP.put(TileContent.EMPTY.getID(), TileContent.EMPTY);

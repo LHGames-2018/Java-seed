@@ -29,7 +29,8 @@ public enum Item {
         return fID;
     }
 
-    private static final HashMap<Integer,Item> ITEM_ID_MAP;
+    private static final HashMap<Integer, Item> ITEM_ID_MAP;
+
     static {
         ITEM_ID_MAP = new HashMap<>();
         ITEM_ID_MAP.put(Item.SWORD.getID(), Item.SWORD);

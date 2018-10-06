@@ -15,42 +15,64 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MapDeserializer {
-    /** This parser detects a opening bracket. */
+    /**
+     * This parser detects a opening bracket.
+     */
     private final static Parser<Void> PARSER_BRACKET_OPEN = Scanners.isChar('[');
 
-    /** This parser detects a closing bracket. */
+    /**
+     * This parser detects a closing bracket.
+     */
     private final static Parser<Void> PARSER_BRACKET_CLOSE = Scanners.isChar(']');
 
-    /** This parser detects a opening brace. */
+    /**
+     * This parser detects a opening brace.
+     */
     private final static Parser<Void> PARSER_BRACE_OPEN = Scanners.isChar('{');
 
-    /** This parser detects a closing brace. */
+    /**
+     * This parser detects a closing brace.
+     */
     private final static Parser<Void> PARSER_BRACE_CLOSE = Scanners.isChar('}');
 
-    /** This parser detects a comma. */
+    /**
+     * This parser detects a comma.
+     */
     private final static Parser<Void> PARSER_COMMA = Scanners.isChar(',');
 
-    /** This parser detects the pattern '(x,)*x+λ' where x is a number. */
+    /**
+     * This parser detects the pattern '(x,)*x+λ' where x is a number.
+     */
     private final static Parser<List<Float>> PARSER_TILE_CONTENT =
             Scanners.DECIMAL.map(s -> Float.parseFloat(s)).sepBy(PARSER_COMMA);
 
-    /** This parser detects the pattern `{(x,)*x+λ}`. */
+    /**
+     * This parser detects the pattern `{(x,)*x+λ}`.
+     */
     private final static Parser<List<Float>> PARSER_TILE_ITEM =
             Parsers.sequence(PARSER_BRACE_OPEN, PARSER_TILE_CONTENT, PARSER_BRACE_CLOSE, (x1, x2, x3) -> x2);
 
-    /** This parser detects the pattern `({(x,)*x+λ},)*{(x,)*x+λ}+λ`. */
+    /**
+     * This parser detects the pattern `({(x,)*x+λ},)*{(x,)*x+λ}+λ`.
+     */
     private final static Parser<List<List<Float>>> PARSER_ROW_CONTENT =
             PARSER_TILE_ITEM.sepBy(PARSER_COMMA);
 
-    /** This parser detects the pattern `[({(x,)*x+λ},)*{(x,)*x+λ}+λ]`. */
+    /**
+     * This parser detects the pattern `[({(x,)*x+λ},)*{(x,)*x+λ}+λ]`.
+     */
     private final static Parser<List<List<Float>>> PARSER_ROW_ITEM =
             Parsers.sequence(PARSER_BRACKET_OPEN, PARSER_ROW_CONTENT, PARSER_BRACKET_CLOSE, (x1, x2, x3) -> x2);
 
-    /** This parser detects the pattern `([({(x,)*x+λ},)*{(x,)*x+λ}+λ])*[({(x,)*x+λ},)*{(x,)*x+λ}+λ]+λ`. */
+    /**
+     * This parser detects the pattern `([({(x,)*x+λ},)*{(x,)*x+λ}+λ])*[({(x,)*x+λ},)*{(x,)*x+λ}+λ]+λ`.
+     */
     private final static Parser<List<List<List<Float>>>> PARSER_MAP_CONTENT =
             PARSER_ROW_ITEM.sepBy(PARSER_COMMA);
 
-    /** This parser detects the pattern `[([({(x,)*x+λ},)*{(x,)*x+λ}+λ])*[({(x,)*x+λ},)*{(x,)*x+λ}+λ]+λ]`. */
+    /**
+     * This parser detects the pattern `[([({(x,)*x+λ},)*{(x,)*x+λ}+λ])*[({(x,)*x+λ},)*{(x,)*x+λ}+λ]+λ]`.
+     */
     private final static Parser<List<List<List<Float>>>> PARSER_MAP_ITEM
             = Parsers.sequence(PARSER_BRACKET_OPEN, PARSER_MAP_CONTENT, PARSER_BRACKET_CLOSE, (x1, x2, x3) -> x2);
 
@@ -69,7 +91,7 @@ public class MapDeserializer {
             List<Tile> tiles = new ArrayList<>();
             for (int j = 0; j < row.size(); j++) {
                 List<Float> parameters = row.get(j);
-                Point position = new Point(relative.getX()+i, relative.getY()+j);
+                Point position = new Point(relative.getX() + i, relative.getY() + j);
                 Tile tile = deserializer.deserialize(parameters, position);
                 tiles.add(tile);
             }

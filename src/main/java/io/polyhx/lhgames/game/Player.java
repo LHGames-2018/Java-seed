@@ -45,21 +45,21 @@ public class Player implements IPoint {
         fName = name;
 
         /* make sure we have an upgrade array */
-        if(upgrades == null) {
-            upgrades = new int[]{0,0,0,0,0};
+        if (upgrades == null) {
+            upgrades = new int[]{0, 0, 0, 0, 0};
         }
 
         /* make the array of length 5 if it isn't for some reason */
-        if(upgrades.length < 5) {
+        if (upgrades.length < 5) {
             System.out.println("Upgrade array has less than 5 elements: " + upgrades);
-            int[] newUpgrades = new int[]{0,0,0,0,0};
-            for(int i = 0; i < newUpgrades.length; i++) {
+            int[] newUpgrades = new int[]{0, 0, 0, 0, 0};
+            for (int i = 0; i < newUpgrades.length; i++) {
                 newUpgrades[i] = (i < upgrades.length) ? upgrades[i] : 0;
             }
         }
 
         /* warning if the array is of a size higher than 5 */
-        if(upgrades.length > 5) {
+        if (upgrades.length > 5) {
             System.out.println("Upgrade array has more than 5 elements: " + upgrades);
         }
 
@@ -74,7 +74,7 @@ public class Player implements IPoint {
 
         /* create the items */
         fItems = new ArrayList<>();
-        for(int item : items) {
+        for (int item : items) {
             fItems.add(Item.fromID(item));
         }
     }

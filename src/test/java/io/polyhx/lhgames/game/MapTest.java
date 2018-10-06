@@ -13,32 +13,33 @@ import static org.junit.Assert.*;
 public class MapTest {
     /**
      * The test data for the equivalent map:
-     *
-     *      [1] [ ] [4]
-     *      [3] [ ] [ ]
-     *      [2] [4] [ ]
-     *
+     * <p>
+     * [1] [ ] [4]
+     * [3] [ ] [ ]
+     * [2] [4] [ ]
      */
     private static final String TEST_DATA = "[[{1},{3},{2}],[{},{},{4,5000,1}],[{4,1500,1.5},{},{}]]";
 
-    /** The map generated from the data. */
+    /**
+     * The map generated from the data.
+     */
     private final Map fMap;
 
     public MapTest() {
         List<Tile> column0 = new ArrayList<>();
-        column0.add(new Tile(new Point(20,15), TileContent.EMPTY));
-        column0.add(new Tile(new Point(20,16), TileContent.LAVA));
-        column0.add(new Tile(new Point(20,17), TileContent.HOUSE));
+        column0.add(new Tile(new Point(20, 15), TileContent.EMPTY));
+        column0.add(new Tile(new Point(20, 16), TileContent.LAVA));
+        column0.add(new Tile(new Point(20, 17), TileContent.HOUSE));
 
         List<Tile> column1 = new ArrayList<>();
-        column1.add(new Tile(new Point(21,15), TileContent.PLAYER));
-        column1.add(new Tile(new Point(21,16), TileContent.EMPTY));
-        column1.add(new Tile(new Point(21,17), TileContent.LAVA));
+        column1.add(new Tile(new Point(21, 15), TileContent.PLAYER));
+        column1.add(new Tile(new Point(21, 16), TileContent.EMPTY));
+        column1.add(new Tile(new Point(21, 17), TileContent.LAVA));
 
         List<Tile> column2 = new ArrayList<>();
-        column2.add(new Tile(new Point(22,15), TileContent.HOUSE));
-        column2.add(new Tile(new Point(22,16), TileContent.EMPTY));
-        column2.add(new Tile(new Point(22,17), TileContent.SHOP));
+        column2.add(new Tile(new Point(22, 15), TileContent.HOUSE));
+        column2.add(new Tile(new Point(22, 16), TileContent.EMPTY));
+        column2.add(new Tile(new Point(22, 17), TileContent.SHOP));
 
         List<List<Tile>> tiles = new ArrayList<>();
         tiles.add(column0);

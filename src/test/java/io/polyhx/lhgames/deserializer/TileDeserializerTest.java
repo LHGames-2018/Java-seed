@@ -56,7 +56,7 @@ public class TileDeserializerTest {
         assertEquals(resources.size(), 0);
 
         /* resource tile */
-        tile = deserializer.deserialize(Arrays.asList(4.0f,5000.0f,2.0f), new Point(0, 0));
+        tile = deserializer.deserialize(Arrays.asList(4.0f, 5000.0f, 2.0f), new Point(0, 0));
         assertEquals(tile.getContent(), TileContent.RESOURCE);
         assertEquals(tile.getX(), 0);
         assertEquals(tile.getY(), 0);
@@ -65,14 +65,14 @@ public class TileDeserializerTest {
         assertEquals(((ResourceTile) tile).getDensity(), 2, 0.001);
 
         /* empty tile from a malformed resource tile */
-        tile = deserializer.deserialize(Arrays.asList(4.0f,5000.0f), new Point(0, 0));
+        tile = deserializer.deserialize(Arrays.asList(4.0f, 5000.0f), new Point(0, 0));
         assertEquals(tile.getContent(), TileContent.EMPTY);
         assertEquals(tile.getX(), 0);
         assertEquals(tile.getY(), 0);
         assertEquals(resources.size(), 1);
 
         /* empty tile from a malformed resource tile */
-        tile = deserializer.deserialize(Arrays.asList(4.0f,5000.0f,4.0f,5.0f), new Point(0, 0));
+        tile = deserializer.deserialize(Arrays.asList(4.0f, 5000.0f, 4.0f, 5.0f), new Point(0, 0));
         assertEquals(tile.getContent(), TileContent.EMPTY);
         assertEquals(tile.getX(), 0);
         assertEquals(tile.getY(), 0);
@@ -100,7 +100,7 @@ public class TileDeserializerTest {
         assertEquals(resources.size(), 1);
 
         /* resource tile */
-        tile = deserializer.deserialize(Arrays.asList(4.0f,1000.0f,1.0f), new Point(0, 0));
+        tile = deserializer.deserialize(Arrays.asList(4.0f, 1000.0f, 1.0f), new Point(0, 0));
         assertEquals(tile.getContent(), TileContent.RESOURCE);
         assertEquals(tile.getX(), 0);
         assertEquals(tile.getY(), 0);
