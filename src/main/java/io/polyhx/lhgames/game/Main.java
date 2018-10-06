@@ -46,7 +46,7 @@ public class Main {
             /* get an action from the bot */
             IAction action;
             try {
-                action = bot.getAction(game.getPlayer(), game.getMap());
+                action = bot.getAction(game.getMap(), game.getPlayer(), game.getOtherPlayers(), game);
             } catch (Exception e){
                 e.printStackTrace();
                 return null;

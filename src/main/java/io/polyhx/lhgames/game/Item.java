@@ -9,9 +9,9 @@ import java.util.HashMap;
 public enum Item {
     SWORD("Sword", 0),
     SHIELD("Shield", 1),
-    BACKPACK("Backpack", 1),
-    PICKAXE("Pickaxe", 2),
-    HEALTH_POTION("HealthPotion", 3);
+    BACKPACK("Backpack", 2),
+    PICKAXE("Pickaxe", 3),
+    HEALTH_POTION("HealthPotion", 4);
 
     private final String fJSON;
     private final int fID;
